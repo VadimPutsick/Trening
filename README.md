@@ -1,5 +1,5 @@
-#Homework 1
+# Homework 1
 Create new repository
-#Homework 2
+# Homework 2
 Create simple html page using bookmark`s
 
