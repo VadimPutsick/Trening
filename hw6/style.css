@@ -1,5 +1,5 @@
 .hw6-form {
-    width: 330px;
+    width: 360px;
 }
 
 .hw6-form-content {
@@ -32,10 +32,6 @@
 
 .hw6-form-select:focus {
     outline: none;
-}
-
-.hw6-form-select__option {
-    padding-right: 250px;
 }
 
 .hw6-form-select_date {
@@ -74,11 +70,7 @@
     border: none;
     background: none;
     position: relative;
-    left: 78%;
-}
-
-.hw6-form-button_submit:focus {
-     outline: none;
+    left: 80%;
 }
 
 .hw6-form-button_submit__img {
