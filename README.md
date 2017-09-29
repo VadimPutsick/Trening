@@ -8,6 +8,8 @@ Work with text css
 Work with tables and form`s
 # Homework 5
 CSS model
+# Homework 6
+Learn Bem metodology
 
 
 
