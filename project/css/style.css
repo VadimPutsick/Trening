@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'SourseSansPro';
+    src: url('../fonts/SourceSansPro-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.pr-page { 
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-family: 'SourseSansPro';
+    font-size: 16px;   
+   
+}
+
+/* testimonal */
+
+.pr-page-testimonal { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 4 4 100%;      
+     /* background-image: linear-gradient(to right, black 0%, black 0%), url('../img/6.jpg');
+    background-blend-mode: color-burn; 
+    */
+    background-image: url(../img/6.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;    
+   
+}
+
+.pr-page-testimonal-content{
+   
+    width: 50%;
+}
+
+

@@ -1,0 +1,102 @@
+.pr-home-photo {
+    flex: 2 2 50%;
+    height: 100vh;   
+    /* Visual */
+    background-color: #f0e2d7;
+    background-image: url(../img/5.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.pr-home-photo--text {
+    margin: 3% 0 0 25%;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px white;
+    opacity: .7;
+}
+
+.pr-home-info {
+    padding: 0 45px;
+    flex: 2 2 50%;
+    height: 100vh;
+    box-sizing: border-box;  
+    background-color: #f0e2d7;
+}
+.pr-home-info-content{
+    padding: 0 45px 0 45px;
+}
+
+/* Menu */
+
+.pr-home-menu {
+    padding: 15px;
+    font-size: 14px;
+    color: #7b859e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pr-home-menu:hover {
+    color: #dbb66f;
+}
+
+.pr-home-menu--home__active {
+    color: #dbb66f;
+}
+
+
+/* Info Text */
+
+.pr-home-info-text--title {
+    padding: 20% 0 3% 0;
+    font-size: 12px;   
+    font-weight: bold;
+    color: #9c9994;
+}
+
+.pr-home-info-text--middle-section {
+    padding-bottom: 3%;
+    font-size: 42px;
+    color: rgb(17, 18, 20);
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.pr-home-info-text--middle-section__bold {
+    font-weight: bold;
+}
+
+.pr-home-info-text--end-section {
+    padding-bottom: 3%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #9c9994;
+}
+
+
+/* Info Button`  */
+
+.pr-home-info-button {
+    display: inline-block;
+    padding: 10px 35px;
+    font-size: 16px;
+    border: 2px solid #1A1B1D;
+    border-radius: 30px;
+    opacity: .9;
+}
+
+.pr-home-info-button:hover {
+    background-color: #dbb66f;
+    border-color: #dbb66f;
+}
+
+.pr-home-info-button:hover .pr-home-info-button--link {
+    color: #FFFBFB;
+}
+
+.pr-home-info-button--link {
+    text-decoration: none;
+    color: #28292d;
+}
