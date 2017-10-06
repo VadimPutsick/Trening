@@ -1,0 +1,52 @@
+.pr-block-small {
+    display: flex;
+    flex: 1 1 25%;    
+    color: #fff;
+}
+/* inside content */
+.pr-block-small-content {
+    padding: 52px 37px;
+    text-align: center;
+}
+.pr-block-small-icon{
+    padding-bottom: 22px;
+}
+.pr-block-small--title {
+    padding: 20px 0 16px 0;
+    font-size: 26px;
+}
+
+.pr-block-small--text{ 
+    padding-bottom: 10px;
+    font-size: 18px;
+    opacity: .7;
+  
+}
+
+
+/* block color modificator */
+
+.pr-block-small__orange{
+    background-color: #e4ae58;
+   
+}
+
+.pr-block-small__rose {
+    background-color: #e9714c;
+   
+}
+
+.pr-block-small__black {
+    background-color: #161616;  
+}
+
+.pr-block-small__white {
+    background-color: #fff;
+    color: black;
+}
+
+
+.pr-block-small--title__large{
+    padding-bottom: 42px;
+    font-size: 42px;
+}

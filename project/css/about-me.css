@@ -1,0 +1,100 @@
+/* About me */
+
+.pr-page-about-me-text {
+    flex: 2 2 50%;
+    background-color: #fff;
+}
+
+.pr-page-about-me-content {
+    padding: 32px 47px 47px 32px;
+}
+
+
+/* abot me block - text styles */
+
+.pr-page-about-me-text--title {
+    padding: 20px 0 14px 0;
+    font-size: 42px;
+    opacity: .5;
+}
+
+.pr-page-about-me-text--upper-section {
+    padding-bottom: 42px;
+    color: #efbc6b;
+}
+
+.pr-page-about-me-text--lower-section {
+    padding-bottom: 10px;
+    opacity: .4;
+}
+
+
+/* skills block */
+
+.pr-page-self-photo {
+    flex: 1 1 25%;
+    background-image: url(../img/1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.pr-page-my-skils {
+    flex: 1 1 25%;
+    box-sizing: border-box;
+    background-color: #e4ae58;
+    color: #fff;
+}
+
+.pr-page-my-skils-content {
+    padding: 22px 47px 32px 47px;
+}
+
+.pr-my-skils--title {
+    padding-bottom: 14px;
+    font-size: 42px;
+}
+.pr-my-skils--skils{
+    padding-bottom: 32px;
+}
+
+.pr-my-skils-progress-feild {
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pr-my-skilss-progres-feild--name {
+    color: #000000;
+}
+
+.pr-my-skils-progress-bar {
+    background: #fff;
+    height: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pr-my-skils-progress-bar::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: #000000;
+}
+
+.pr-my-skils-progress-bar__frontend::before {
+    width: 90%;
+}
+
+.pr-my-skils-progress-bar__backend::before {
+    width: 70%;
+}
+
+.pr-my-skils-progress-bar__html::before {
+    width: 80%;
+}
+
+.pr-page-skills {
+    display: flex;
+    height: 50vh;
+}

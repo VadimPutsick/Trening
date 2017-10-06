@@ -1,0 +1,106 @@
+.pr-page-contact-form {
+    flex: 2 2 50%;
+    background-color: #e9714c;
+    color: #fff;
+}
+.pr-contact-form{
+    margin-bottom: 140px;
+}
+.pr-contact-form--title {
+    font-size: 42px;
+}
+
+.pr-contact-form--text {
+    padding: 14px 0 10px 0;
+}
+
+.pr-contact-form {
+    padding: 5% 6%;
+}
+
+.pr-contact-form--input {
+    padding:16px 0 31px 0;
+    width: 100%;
+    color: #fff;
+    display: block;   
+    font-family: 'SourseSansPro';
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #e5ab57;
+    background-color: #e9714c;
+    outline: none;
+}
+
+.pr-contact-form--message {
+    padding: 16px 0 31px 0;
+    width: 100%;   
+    display: block;   
+    font-family: 'SourseSansPro';
+    resize: none;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #e5ab57;
+    background-color: #e9714c;
+    outline: none;
+}
+
+.pr-contact-form--button {
+    margin: 3% 0;
+    padding: 15px 90px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+     color: #2C2C2C;
+    background-color:  #fff;
+}
+
+.pr-page-photo--contact {
+    flex: 1 1 25%;
+    background-image: url(../img/2.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+.pr-page-contact-data {
+    flex: 1 1 25%;
+    background-color: #161616;
+    color: #fff;
+}
+
+.pr-page-contact-data-content {
+    padding: 22px 47px;
+}
+
+.pr-contact--title {
+    padding: 20px 0 10px 0;
+    font-size: 26px;
+}
+
+.pr-contact--text {
+    padding-bottom: 10px;
+    color: #696969;
+}
+
+.pr-contact--item {
+    margin: 4% 0;
+    display: flex;
+}
+
+.pr-contact--item-content {
+    position: relative;
+    bottom: 5px;
+    padding: 0 0 0 15px;
+    color: #696969;
+    text-decoration: none;
+}
+
+.pr-contact--item-content__orange {
+    color: #ae904a;
+}
+
+::-webkit-input-placeholder {color:  #fff;}
+::-moz-placeholder          {color:  #fff;}/* Firefox 19+ */
+:-moz-placeholder           {color:  #fff;}/* Firefox 18- */
+:-ms-input-placeholder      {color:  #fff;}

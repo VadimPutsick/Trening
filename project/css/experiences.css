@@ -1,0 +1,80 @@
+.pr-page--photo-experience {
+    flex: 2 2 50%;
+    background-color: #f0e2d7;
+    background-image: url(../img/4.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: cover;
+}
+
+
+/* EXPERIENCE */
+
+.pr-experiences {
+    flex: 2 2 50%;
+    color: #fff;
+}
+
+.pr-experiences-content {
+    padding: 22px 57px 42px 57px;
+}
+
+.pr-experiences__red {
+    background-color: #e9714c;
+}
+
+.pr-experiences--title {
+    padding: 20px 0 14px 0;
+    font-size: 42px;
+    ;
+}
+
+.pr-experiences--text {
+    padding-bottom: 32px;
+}
+
+.pr-experiences-item {
+    display: flex;
+}
+
+.pr-experience-icon {
+    margin-right: 10px
+}
+
+.pr-experiences-item--title {
+    padding-bottom: 6px;
+    display: inline-block;
+    font-size: 26px;
+}
+
+.pr-experiences-item--data {
+    display: inline-block;
+}
+
+.pr-experiences-item--data__brown {
+    color: #6e353c;
+}
+
+
+/* EDUCATION */
+
+.ht-main-page__educ-section {
+    display: flex;
+    height: 70vh;
+}
+
+.pr-page--photo-education {
+    flex: 2 2 50%;
+    background-image: url(../img/3.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: cover;
+}
+
+.pr-experiences__yellow {
+    background-color: #e4ae58;
+}
+
+.pr-experiences-item--data__green {
+    color: #8e6c24;
+}
