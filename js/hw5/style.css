@@ -1,0 +1,78 @@
+.hw6-form {
+    width: 360px;
+}
+
+.hw6-form-content {
+    border-top: 1px solid rgba(187, 182, 182, 0.38);
+    padding-bottom: 10px;
+    width: inherit;
+}
+
+.hw6-form-label {
+    padding-top: 10px;
+    font-size: 0.7em;
+    color: rgb(187, 182, 182);
+    display: block;
+}
+
+.hw6-form-text {
+    border: none;
+}
+
+.hw6-form-text:focus {
+    outline: none;
+}
+
+.hw6-form-select {
+    margin-top: 8px;
+    margin-bottom: 3px;
+    margin-left: -4px;
+    border: none;
+}
+
+.hw6-form-select:focus {
+    outline: none;
+}
+
+.hw6-form-select_date {
+    width: 230px;
+}
+
+.hw6-form-select_time {
+    width: 90px;
+}
+
+.hw6-form-time {
+    margin-left: 10px;
+    display: inline-block;
+    border-bottom: 2px solid red;
+}
+
+.hw6-form-date {
+    display: inline-block;
+    border-bottom: 2px solid red;
+}
+
+.hw6-form_date_warning {
+    color: red;
+    font-size: 0.7em;
+}
+
+.hw6-form-text_input_textarea {
+    width: 100%;
+    border-width: 0;
+    resize: none;
+    margin-left: -3px;
+    font-family: Arial;
+}
+
+.hw6-form-button_submit {
+    border: none;
+    background: none;
+    position: relative;
+    left: 80%;
+}
+
+.hw6-form-button_submit__img {
+    width: 80px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <form class="hw6-form" action="aform.html" target="iframe">
+        <div class="hw6-form-header">
+            <div class="hw6-form-label">Event name</div>
+            <input type="text" onchange="Storage()"  class="hw6-form-text hw6-form-text_input_text" name="event" value="Mel's birthday celebration" />
+        </div>
+        <div class="hw6-form-content">
+            <div class="hw6-form-date-time">
+                <div class="hw6-form-label">From</div>
+                <div class="hw6-form-date">
+                    <select onchange="Storage()" name="from_date" class="hw6-form-select hw6-form-select_date">
+                                <option  value="Fri, Feb10 2014" class="hw6-form-select__option">Fri, Feb10 2014</option>
+                                <option  value="Fri, Feb20 2014" class="hw6-form-select__option">Fri, Feb20 2014</option>
+                                <option value="Fri, Feb30 2014" class="hw6-form-select__option">Fri, Feb30 2014</option>
+                                <option value="Fri, Feb40 2014" class="hw6-form-select__option">Fri, Feb40 2014</option>
+                    </select>
+                </div>               
+
+                <div class="hw6-form-time">
+                    <select onchange="Storage()" name="from_time" class="hw6-form-select hw6-form-select_time">
+                            <option value="7:30 PM" class="hw6-form-select__option">7:30 PM</option>
+                            <option value="7:40 PM" class="hw6-form-select__option">7:40 PM</option>
+                            <option value="7:50 PM" class="hw6-form-select__option">7:50 PM</option>
+                            <option value="7:60 PM" class="hw6-form-select__option">7:60 PM</option>
+                        </select>
+                </div>
+                <div class="hw6-form_date_warning">Date occurs in the past.</div>
+            </div>
+            <div class="hw6-form-date-time">
+                <div class="hw6-form-label">To</div>
+                <div class="hw6-form-date">
+                    <select onchange="Storage()" name="to_date" class="hw6-form-select hw6-form-select_date">
+                                <option value="Fri, Feb10 2014" class="hw6-form-select__option">Fri, Feb10 2014</option>
+                                <option value="Fri, Feb20 2014" class="hw6-form-select__option">Fri, Feb20 2014</option>
+                                <option value="Fri, Feb30 2014" class="hw6-form-select__option">Fri, Feb30 2014</option>
+                                <option value="Fri, Feb40 2014" class="hw6-form-select__option">Fri, Feb40 2014</option>
+                            </select>
+                </div>               
+
+                <div class="hw6-form-time">
+                    <select onchange="Storage()" name="to_time" class="hw6-form-select hw6-form-select_time">
+                            <option value="7:30 PM" class="hw6-form-select__option">11:30 PM</option>
+                            <option value="7:40 PM" class="hw6-form-select__option">11:40 PM</option>
+                            <option value="7:50 PM" class="hw6-form-select__option">11:50 PM</option>
+                            <option value="7:60 PM" class="hw6-form-select__option">11:60 PM</option>
+                        </select>
+                </div>
+                <div class="hw6-form_date_warning">Date occurs in the past.</div>
+            </div>
+        </div>
+
+        <div class="hw6-form-footer">
+            <label class="hw6-form-label">Description</label>
+            <textarea   name="event_description" class="hw6-form-text hw6-form-text_input_textarea">Come help celebrate Mel's birthday with dinner, drinks and putt-putt.</textarea>
+        </div>
+        <div>
+            <label class="hw6-form-label">Number of person on the party</label>
+            <input  type="radio" onclick="Storage()" value="11" name="person_num">11<br>
+            <input type="radio" onclick="Storage()" value="12" name="person_num">12<br>
+            <input type="radio" onclick="Storage()" value="13" name="person_num">13<br>
+            <input type="radio" onclick="Storage()" value="14" name="person_num">14<br>
+            <input type="radio" onclick="Storage()" value="15" name="person_num">15<br>
+        </div>
+        <div>
+            <label class="hw6-form-label">Place the party</label>
+            <input  type="radio" onclick="Storage()" value="home" name="party_place">home<br>
+            <input type="radio" onclick="Storage()" value="caffe" name="party_place">caffe<br>
+            <input type="radio" onclick="Storage()" value="park"  name="party_place">park<br>
+
+        </div>
+        <button class="hw6-form-button hw6-form-button_submit"><img class=" hw6-form-button_submit__img" src="good.png"/></button>
+    </form>
+    <iframe name="iframe" src="beform.html">
+    </iframe> 
+    
+</body>
+<script src="script.js"></script>
+</html>
