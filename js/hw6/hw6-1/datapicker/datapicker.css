@@ -1,0 +1,30 @@
+.hw6-calendar {
+    width:200px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.hw6-calendar-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.hw6-calendar__week-day {
+    padding: 5px;
+    width: 25px;
+    text-align: center;
+    font-weight: bold;
+   
+}
+
+.hw6-calendar__day {
+    text-align: end;
+    padding: 2px;
+    width: 25px;
+   
+}
+.hw6-calendar__day:hover{
+   background-color: #C0B0B0;
+   
+}
