@@ -1,13 +1,13 @@
 {
-  "name": "hw7",
+  "name": "without_ptomise",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "without-pr.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+     "start": "node without-pr.js",
     "build":"npm start"
   },
   "keywords": [],

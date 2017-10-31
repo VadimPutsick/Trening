@@ -1,51 +1,65 @@
 
-var massiv = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+
 function Renderer() {
-   
-     
+    this.mas;
+    this.parent;
 }
 
-Renderer.prototype.render = function(root,mas)  {   
-   
-var parent =  document.querySelector(root);
-for (var index = 0; index < mas.length; index++) {
-     parent.appendChild(mas[index]);
-  }
-  console.log(parent);
-}
+Renderer.prototype.render = function (root) {
 
-Renderer.prototype.create = function(setting, ...elems)  { 
-   var mas = [];
-    for (var index = 0; index < elems.length; index++) {     
-    // var htmlelement =   document.createElement(elems[index].tag);    
-     var htmlelement =   document.createElement("div");    
-    var a = "getDay().month";
-    htmlelement.classList.add(elems[index].class); 
-    htmlelement.innerHTML = setting.a;
-    // mas.push(htmlelement);
-   var obj = {a:1,v:2};
- 
+    var parent = document.querySelector(root);
+    for (var index = 0; index < mas.length; index++) {
+        parent.appendChild(mas[index]);
     }
-    this.render(".hw6-calendar",mas);
-  console.log(obj);
-    
+    console.log(parent);
 }
 
+Renderer.prototype.create = function (setting, ...elems) {
+    mas = [];
+    for (var index = 0; index < elems.length; index++) {
+        var htmlelement = document.createElement("div");
+        if (elems[index].class) htmlelement.classList.add(elems[index].class);
+        if (elems[index].properties) {
+            if (setting[elems[index].properties])
+                htmlelement.innerHTML = setting[elems[index].properties]();
+            else
+                htmlelement.innerHTML = elems[index].properties;
+        }
+
+        mas[index] = htmlelement;
+
+    }
 
 
 
+}
 var renderCalendar = new Renderer();
-var setting;
+
 renderCalendar.create(new CalculateDate(),
-    {
+    {       
         tag: "div",
-        class: "hw6-sample",
-        properties:"getsample"
+        class: "hw6-calendar-head",
+        properties: "<"
     },
     {
         tag: "div",
-        class: "hw6-sample",
-        properties:""
+        class: "hw6-calendar-head",
+        properties: "getDay"
+    },
+    {
+        tag: "div",
+        class: "hw6-calendar-head",
+        properties: ">"
+    },
+    {
+        tag: "div",
+        class: "hw6-calendar-row",
+        properties: "getWeek"
+    },
+    {
+        tag: "div",
+        class: "hw6-calendar-mas",
+        properties: "calculate"
     }
 );
-// renderCalendar.render(".hw6-calendar");
+renderCalendar.render(".hw6-calendar");

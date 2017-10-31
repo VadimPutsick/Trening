@@ -1,29 +1,24 @@
-var date_day;//masiv which contain calendar days
 
 function CalculateDate() {
     this.year;
     this.month;
     this.date;
-
+    this.date_day;
     this.initialize();
     this.calculate();
 }
-CalculateDate.prototype.calculate = () => {
-    var date_week;
-  
+CalculateDate.prototype.calculate = () => {   
     date = 1 - full_date.getDay();
     date_day = null;
     date_day = [];
 
-    for (var i = 0; i < 6; i++) {
-        date_week = null;
-        date_week = [];
+    for (var i = 0; i < 6; i++) {     
         for (var j = 0; j < 7; j++) {
-            date_week.push(new Date(year, month, date));
+            date_day.push(new Date(year, month, date).getDate());
             date++;
-        }
-        date_day.push(date_week);
+        }        
     }
+    return arrayResult(date_day);
 }
 CalculateDate.prototype.initialize = () => {
     year = new Date().getFullYear();
@@ -47,16 +42,22 @@ CalculateDate.prototype.previous = () =>{
 }
 
 CalculateDate.prototype.getDay= ()=>{
-    var day = { 
-year :this.year,
-month : this.month
-    };
-    return day;
+   var monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return this.year+","+ monthsShort[this.month];
 }
-CalculateDate.prototype.getsample= ()=>{
- 
-    return "sample";
+CalculateDate.prototype.getWeek = ()=>{
+ var massiv = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
+ return arrayResult( massiv);
 }
+
+function arrayResult( massiv){
+ var result_view = "";
+ massiv.forEach(function(element) {
+    result_view+= "<div class='hw6-calendar__day'>"+element+"</div>";
+ });
+ return  result_view;
+}
+
 
 var a =  new Date().toLocaleDateString();
 
