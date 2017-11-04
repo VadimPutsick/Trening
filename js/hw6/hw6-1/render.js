@@ -1,5 +1,3 @@
-
-
 function Renderer() {
     this.mas;
     this.parent;
@@ -29,37 +27,4 @@ Renderer.prototype.create = function (setting, ...elems) {
         mas[index] = htmlelement;
 
     }
-
-
-
 }
-var renderCalendar = new Renderer();
-
-renderCalendar.create(new CalculateDate(),
-    {       
-        tag: "div",
-        class: "hw6-calendar-head",
-        properties: "<"
-    },
-    {
-        tag: "div",
-        class: "hw6-calendar-head",
-        properties: "getDay"
-    },
-    {
-        tag: "div",
-        class: "hw6-calendar-head",
-        properties: ">"
-    },
-    {
-        tag: "div",
-        class: "hw6-calendar-row",
-        properties: "getWeek"
-    },
-    {
-        tag: "div",
-        class: "hw6-calendar-mas",
-        properties: "calculate"
-    }
-);
-renderCalendar.render(".hw6-calendar");
