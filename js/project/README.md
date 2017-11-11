@@ -16,5 +16,5 @@
 | ------------- | ----------------------------- |
 | `-`           | separate words                |
 | `__`          | separate blocks and elements  |
-| `-`          | separate modificators         |
+| `_`          | separate modificators         |
 
