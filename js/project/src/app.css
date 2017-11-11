@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    overflow-y: hidden; 
+}
+/* sroll style */
+.pr-scroll {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.pr-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.pr-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.pr-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+
+.pr-app {
+    background-color: #292929;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.pr-searchcourse-wrap {
+    width: 25%; 
+}
+.pr-menu-select-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    /* padding-left: 150px; */
+}
+
+.pr-menu-wrap {
+    padding-left: 150px;
+    width: 200px;
+}
+.pr-converter-wrap{
+    width: 15%;
+}

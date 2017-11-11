@@ -1,3 +1,4 @@
+import './select.css';
 import React, { Component } from 'react';
 
 class SelectItem extends Component {
@@ -21,7 +22,7 @@ class SelectItem extends Component {
 class SelectTable extends Component {
     constructor(props) {
         super(props);
-        // this.tableItems = [1,1,1,1,1,1,1];
+        
         this.tableItems = new Array(30);
         for (var index = 0; index < this.tableItems.length; index++) {
             this.tableItems[index] = " ";
@@ -31,7 +32,9 @@ class SelectTable extends Component {
     render() {
         return (
             <div className="pr-select-scroll">
-                <SelectItem date="Date" usd="USD Currency" />
+                <div className="pr-select-item_first">
+                 <SelectItem   date="Date" usd="USD Currency" />   
+                </div>                
                 <div className="pr-scroll">
                     {
                         this.tableItems

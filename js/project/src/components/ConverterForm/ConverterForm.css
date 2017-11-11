@@ -1,0 +1,9 @@
+.pr-converter-form {
+    padding: 5px;   
+    color: rgb(92, 87, 87);
+}
+
+.pr-form__title {   
+    border-bottom: 1px solid black; 
+    padding: 10px;
+}

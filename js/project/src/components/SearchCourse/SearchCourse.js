@@ -18,8 +18,7 @@ export class SearchCourse extends Component {
                     textValue: newValue
                 });
             }
-        };
-        
+        };        
 
     }
 

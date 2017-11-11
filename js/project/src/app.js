@@ -1,39 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './css/app.css';
-import { Menu } from "./components/Menu.js";
-import {SearchCourse} from "./components/SearchCourse/SearchCourse.js";
-import {Select} from "./components/Select/Select.js";
+import './app.css';
+import { Menu } from "./components/Menu/Menu.js";
+import { SearchCourse } from "./components/SearchCourse/SearchCourse.js";
+import { Select } from "./components/Select/Select.js";
+import { Converter } from "./components/Converter/Converter.js";
 
 
 class App extends Component {
-//   constructor() {    
-
-//     this.state = {
-//         textValue: 'wefe',
-//         onChange: (newValue) => {
-//             this.setState({
-//                 textValue: newValue
-//             });
-//         }
-//     };
-
-// }
-
-onClickCourseSelect(){
-  alert("Erreb");
-}
 
   render() {
     return (
       <div className="pr-app">
-        <Menu/>                   
-        <SearchCourse
-         onClickCourseSelect="this"
-        
-         />   
-       
-        <Select table="Select any currency"/>       
+
+        <div className="pr-searchcourse-wrap">
+          <SearchCourse />
+        </div>
+        <div className="pr-menu-select-wrap">
+          <div className="pr-menu-wrap">
+            <Menu/>
+          </div>
+          <div className="pr-select-wrap">
+            <Select table="Select any currency" />
+          </div>
+        </div>
+        <div className="pr-converter-wrap">
+          < Converter />
+        </div>
       </div>
     );
   }
@@ -41,4 +34,5 @@ onClickCourseSelect(){
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(<App/>, document.getElementById('root'));

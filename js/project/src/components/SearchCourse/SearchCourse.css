@@ -1,7 +1,6 @@
 /* search-course  style */
-.pr-search-course{
-    width: 250px;
-}
+
+
 
 /* search  style */
 .pr-search{
@@ -28,52 +27,29 @@
 
 
 /* course  style */
-.pr-scroll{   
-    overflow-y: scroll;
-    height: 100vh;
-}
-.pr-scroll::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
-
-.pr-scroll::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
-}
-
-.pr-scroll::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
-}
 
 .pr-course-item{
     display: flex;
     flex-direction: row; 
    justify-content: space-between;
    padding: 3px; 
- 
+   color:blue;
 }
-.pr-course-item:focus{
+.pr-course-item:hover{ 
+     color:white;  
      background-color: #057cb7; 
 }
 
 .pr-course__abbreviation{
-    text-align: center;
-    color:blue;
+    text-align: center;  
 }
 .pr-course__rate{
-    text-align: center;
-    color:blue;
+    text-align: center;  
 }
 .pr-course__changes{
     padding: 3px;
-    border-radius: 2px;
+    border: 1px solid white;
+    border-radius: 3px;
     color:white;   
 }
 .pr-course__changes_green{

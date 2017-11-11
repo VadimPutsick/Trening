@@ -1,3 +1,4 @@
+import './menu.css';
 import React, { Component } from 'react';
 
  class MenuItem extends Component {
