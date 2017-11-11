@@ -7,8 +7,8 @@
 
 ### How to use
 
-1. To run project use ```npm run start```
-1. Build for production via ```npm run rel```
+1. To run project in development use ```npm run start```
+1. Build for production use ```npm run rel```
 
 ### Used separators
 
