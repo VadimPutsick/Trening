@@ -5,10 +5,13 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
 	output: {
-		filename: '[name].min.bundle.js',
+		filename: '[name].build.js',
 		path: path.resolve(__dirname, 'dist')
 	},
+	devtool: 'source-map',
 	plugins: [
-		new UglifyJSPlugin()
+		new UglifyJSPlugin({
+			sourceMap: true
+		})
 	]
 });

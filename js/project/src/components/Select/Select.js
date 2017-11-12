@@ -22,10 +22,10 @@ class SelectItem extends Component {
 class SelectTable extends Component {
     constructor(props) {
         super(props);
-        
+
         this.tableItems = new Array(30);
         for (var index = 0; index < this.tableItems.length; index++) {
-            this.tableItems[index] = " ";
+            this.tableItems[index] = '';
         }
     }
 
@@ -33,8 +33,8 @@ class SelectTable extends Component {
         return (
             <div className="pr-select-scroll">
                 <div className="pr-select-item_first">
-                 <SelectItem   date="Date" usd="USD Currency" />   
-                </div>                
+                    <SelectItem date="Date" usd="USD Currency" />
+                </div>
                 <div className="pr-scroll">
                     {
                         this.tableItems
@@ -47,7 +47,7 @@ class SelectTable extends Component {
                                         usd=""
                                         key={index}
                                     />
-                                )
+                                );
                             }
                             )
                     }
@@ -58,20 +58,10 @@ class SelectTable extends Component {
 }
 
 export class Select extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { select: this.props.table }
-    }
-    onSelect() {
-        this.setState(
-            { select: <SelectTable /> }
-        );
-    }
-
-    render() {
+      render() {
         return (
-            <div className="pr-select" onClick={this.onSelect.bind(this)}>
-                {this.state.select}
+            <div className="pr-select" >
+               <SelectTable />
             </div>
         );
     }

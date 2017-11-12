@@ -4,13 +4,10 @@ import data from "../../data/currency.json";
 class CourseItem extends Component {
     constructor(props) {
         super(props);
-    }
-    // onClickCourseSelect(){
-        
-    // }
+    }   
     render() {
         return (
-            <div   className="pr-course-item">
+            <div className="pr-course-item">
                 <div className="pr-course__abbreviation">{this.props.abbreviation}</div>
                 <div className="pr-course__rate">{this.props.rate}</div>
                 <div className="pr-course__changes pr-course__changes_green">+0.00019</div>
@@ -42,7 +39,7 @@ export class Course extends Component {
                                 abbreviation={item['Cur_Abbreviation']}
                                 rate={String(item['Cur_OfficialRate']).slice(0, 4)}
                             />
-                        )
+                        );
                     })
                 }
             </div>

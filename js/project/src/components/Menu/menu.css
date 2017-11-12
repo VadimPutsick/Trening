@@ -7,5 +7,6 @@
 
 .pr-menu__item {
     padding: 0 10px 10px 10px;
+    color: white;
     text-decoration-line: underline;
 }

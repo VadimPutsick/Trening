@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
 	output: {
-		filename: '[name].bundle.js',
+		filename: '[name].build.js',
 		path: path.resolve(__dirname, 'dist')
 	},	
     externals: [{

@@ -5,9 +5,7 @@
     background-color: rgb(204, 204, 204);
     color: black;
 }
-.pr-converter-form-wrapper{    
-    position: absolute;
-    right: 0;
+.pr-converter-form-wrapper{           
     background-color: rgb(204, 204, 204);
     height: 100vh;
 }
