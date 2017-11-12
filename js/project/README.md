@@ -6,7 +6,7 @@
 * [Bem separators](#used-separators)
 
 ### View project
-VadimPutsickReact.github.io
+[You may view this project here](https://vadimputsickreact.github.io/#/)
 
 ### How to use
 
