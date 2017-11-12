@@ -1,7 +1,7 @@
 # Project
 
 ## Table of Contents
-* [View](#View project)
+* [View](#view project)
 * [How run the project](#how-to-use)
 * [Bem separators](#used-separators)
 
