@@ -1,9 +1,12 @@
 # Project
 
 ## Table of Contents
-
+* [View](#View project)
 * [How run the project](#how-to-use)
 * [Bem separators](#used-separators)
+
+### View project
+VadimPutsickReact.github.io
 
 ### How to use
 
