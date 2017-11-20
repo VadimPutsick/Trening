@@ -1,6 +1,6 @@
 import './converter.css';
 import React, { Component } from 'react';
-import { ConverterForm } from '../ConverterForm/ConverterForm.js';
+import { ConverterForm } from '../converter-form';
 export class Converter extends Component {
     render() {
         const converter = (

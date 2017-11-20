@@ -4,9 +4,9 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import { Menu } from "../Menu/Menu.js";
-import { Select } from "../Select/Select.js";
-import { Converter } from "../Converter/Converter.js";
+import { Menu } from '../menu';
+import { Select } from '../select';
+import { Converter } from '../converter';
 
 export class MyRouter extends Component {
 
@@ -18,6 +18,7 @@ export class MyRouter extends Component {
               <Menu />
             </div>
             <div className="pr-select-wrap">
+          
               <Route path="/Home" component={Select} />
               <Route path="/Converter" component={Converter} />
             </div>

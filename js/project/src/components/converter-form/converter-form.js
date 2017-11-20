@@ -1,6 +1,6 @@
-import './ConverterForm.css';
+import './converter-form.css';
 import React, { Component } from 'react';
-import { ConverterFormItem } from '../ConverterFormItem/ConverterFormItem.js';
+import { ConverterFormItem } from '../converter-form-item';
 
 export class ConverterForm extends Component {
     constructor(props) {

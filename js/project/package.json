@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
-     "prod": "webpack --config webpack.prod.js"
+    "prod": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",

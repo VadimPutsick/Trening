@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './SearchCourse.css';
+import './search-course.css';
 // import { url } from "../data/data.js";
 // import { httpGet } from "../data/data.js";
-import { Search } from "./Search.js";
-import { Course } from "./Course.js";
+import { Search } from "./search.js";
+import { Course } from "../course";
 
 
 
@@ -19,6 +19,8 @@ export class SearchCourse extends Component {
             }
         };
     }
+   
+
 
     render() {
 
