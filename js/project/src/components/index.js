@@ -1,9 +1,23 @@
 export {
-    SearchCourse
+    CurrencyPanel
 }
-from './search-course';
+from './currency-panel';
 
 export {
-    MyRouter
+    About
 }
-from './my-router';
+from './about';
+
+export {
+    Calculator
+}
+from './calculator';
+
+export {
+    Currencies
+}
+from './currencies';
+export {
+    Favourite
+}
+from './favourite';

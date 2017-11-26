@@ -1,4 +1,0 @@
-export {
-    Course
-}
-from './course';

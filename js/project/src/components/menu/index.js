@@ -1,4 +1,0 @@
-export {
-    Menu
-}
-from './menu';

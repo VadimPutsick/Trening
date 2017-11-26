@@ -1,0 +1,66 @@
+
+/* course  style */
+
+.pr-course-item{
+    display: flex;
+    flex-direction: row; 
+   justify-content: space-between;
+   padding: 3px; 
+   color:blue;
+}
+.pr-course-item:hover{ 
+     color:white;  
+     background-color: #057cb7; 
+}
+
+.pr-course__abbreviation{
+    text-align: left;  
+    width:40px;
+}
+.pr-course__rate{
+    text-align: left;  
+}
+.pr-course__changes{
+    padding: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color:white;   
+}
+.pr-course__changes_green{
+    background-color: rgba(61, 226, 61, 0.719);
+}
+.pr-course__changes_red{
+    background-color: rgba(226, 85, 85, 0.774);
+}
+
+/* Search style */
+/* search-course  style */
+
+
+
+/* search  style */
+.pr-search{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.pr-search-item{    
+    padding:3px;
+    border: 1px solid rgb(116, 106, 106);        
+    color:white;
+}
+.pr-search-item:focus{
+ outline: none;   
+}
+.pr-search-item_input{  
+    width:70%;
+    border-radius:10px 0 0 10px;    
+    background-color: rgb(1, 20, 71);
+}
+.pr-search-item_button{     
+    width: 50px;
+    border-radius:0 10px 10px 0;   
+    background-color: #472d00;
+}
+
+

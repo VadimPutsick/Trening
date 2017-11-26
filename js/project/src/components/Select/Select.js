@@ -1,6 +1,9 @@
 import './select.css';
 import React, { Component } from 'react';
 
+import { addTodo, removeTodo } from '../../store/actions';
+import { connect } from 'react-redux';
+
 class SelectItem extends Component {
     constructor(props) {
         super(props);
@@ -57,12 +60,23 @@ class SelectTable extends Component {
     }
 }
 
-export class Select extends Component {
+ class Select extends Component {
       render() {
         return (
             <div className="pr-select" >
+             
                <SelectTable />
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    const values = state.todo.values;
+    const todoState = state.todo.state;
+
+    return { values, state: todoState };
+}
+
+let output = connect(mapStateToProps)(Select);
+export  {output as Select}

@@ -1,0 +1,60 @@
+.pr-converter__default {
+    margin: 350px 0 0 30px;
+    padding: 20px 8px;
+    border-radius: 20px 0 0 20px;
+    background-color: rgb(204, 204, 204);
+    color: black;
+}
+
+.pr-converter-form-wrapper {
+    background-color: rgb(204, 204, 204);
+    height: 100vh;
+}
+
+.pr-converter-form {
+    padding: 5px;
+    color: rgb(92, 87, 87);
+}
+
+.pr-form__title {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.pr-form-item {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 10px;
+}
+
+.pr-form__label {
+    width: 100px;
+}
+
+.pr-form__input-wrapper {
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pr-form__input {
+    padding: 0 5px 0 20px;
+    border-radius: 3px;
+}
+
+.pr-form__select {
+    padding-right: 10px;
+    border-color: rgb(92, 87, 87);
+    background-color: inherit;
+    color: rgb(92, 87, 87);
+}
+
+.pr-form__select:focus {
+    outline: none;
+    border-color: rgb(92, 87, 87);
+}
+
+.pr-form__error {
+    height: 15px;
+    color: red;
+}
