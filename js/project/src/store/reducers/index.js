@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { todoReducer } from './todo.reducer';
+import { currecyListReducer } from './currecy-list.reducer';
 
 export const appReducers = combineReducers({
-    todo: todoReducer
+    currecyList: currecyListReducer
 });

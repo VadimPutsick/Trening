@@ -1,25 +1,37 @@
- import  {DataService} from './data-service.js'
- import { Entity } from './entity';
- const TodayCourse = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
- let yesterday = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() - 1}`;
- const YesterdayCourse = `http://www.nbrb.by/API/ExRates/Rates?onDate=${yesterday}&Periodicity=0`;
+import { CurrencyEntity } from './entity';
+import axios from 'axios';
+const TodayCourse = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
+// http://www.nbrb.by/API/ExRates/Currencies/191
+let yesterday = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() - 1}`;
+const YesterdayCourse = `http://www.nbrb.by/API/ExRates/Rates?onDate=${yesterday}&Periodicity=0`;
 export class EntityService {
-     constructor() {
-        this.dataService = new DataService();
-    }
 
-    getEntities() {
-        return this.dataService.getData(TodayCourse)
-        .then(response => {
-            let dataCourse = new Array();
-            response.data.map(
-                (item) => {
-                    dataCourse.push(new Entity(item));
+    getCurrencyList() {
+        return Promise.all([
+            axios.get(TodayCourse),
+            axios.get(YesterdayCourse)
+        ]).then(
+            (results) => {
+                let currencyList = [];
+                let todayCurrencyIndex = 0;
+                let yearstedayCurrencyIndex = 1;
+                let todayCurrency = results[todayCurrencyIndex];
+                let yearstedayCurrency = results[yearstedayCurrencyIndex];
+                let numberFixe = 4;
+                for (var index = 0; index < todayCurrency.data.length; index++) {
+                    currencyList.push(
+                        {
+                            ...new CurrencyEntity(todayCurrency.data[index]),
+                            currencyChange: (
+                                new CurrencyEntity(todayCurrency.data[index]).rate - new CurrencyEntity(yearstedayCurrency.data[index]).rate
+                            ).toFixed(numberFixe)
+                        }
+
+                    );
+
                 }
-            );
-        //   console.log(dataCourse);
-            return dataCourse;
-        });
+
+                return currencyList;
+            });
     }
 }
-

@@ -1,23 +1,23 @@
 export {
     CurrencyPanel
 }
-from './currency-panel';
+    from './currency-panel';
 
 export {
     About
 }
-from './about';
+    from './about';
 
 export {
     Calculator
 }
-from './calculator';
+    from './calculator';
 
 export {
     Currencies
 }
-from './currencies';
+    from './currencies';
 export {
     Favourite
 }
-from './favourite';
+    from './favourite';
