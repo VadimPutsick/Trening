@@ -1,4 +1,0 @@
-export {
-    Calculator
-}
-from './calculator';

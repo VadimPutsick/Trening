@@ -5,19 +5,11 @@ import { EntityService } from '../../service';
 import { Currency } from '../currency';
 
 import { connect } from 'react-redux';
-import { getCurrencyList } from './../../store/actions';
- // .filter(
-    //     (item) => {
-    //         return String(item.Cur_Abbreviation).indexOf(String(this.props.filter).toUpperCase()) !== -1;//nameShort
-    //     }
-    // )
+import { getCurrencyList,currencyListFiltered } from './../../store/actions';
 class CurrencyPanel extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            dataCourse: [],
-            error:props.errror
-        };
+      this.currencyFiltere = '';
     }
     componentWillMount() {
         let ent = new EntityService();
@@ -32,8 +24,15 @@ class CurrencyPanel extends Component {
                         className="pr-search-item pr-search-item_input"
                         type="text"
                         placeholder="Search input"
+                        onChange = {(event)=>{
+                            this.props.currencyFiltere(event.target.value);
+                        }}
                     />
-                    <button className="pr-search-item pr-search-item_button">Search</button>
+                    <button className="pr-search-item pr-search-item_button"
+                    onClick={
+                        ()=>{console.log(this.props)}
+                    }
+                    >Search</button>
                 </div>
                 <div className="pr-scroll">
                     {
@@ -57,13 +56,14 @@ class CurrencyPanel extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    const currencyList = state.currecyList.items;
+    const currencyList = state.currecyList.filteredItems;
     const error = state.currecyList.error;
     return { currencyList,error };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    getCurrency: (todo) => dispatch(getCurrencyList(todo))
+    getCurrency: (value) => dispatch(getCurrencyList(value)),
+    currencyFiltere: (value) => dispatch(currencyListFiltered(value))
 });
 let output = connect(mapStateToProps, mapDispatchToProps)(CurrencyPanel);
 export { output as CurrencyPanel };

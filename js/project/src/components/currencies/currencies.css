@@ -1,0 +1,23 @@
+.pr-currencies{
+    padding:30px;
+    width:65%;  
+}
+.pr-currencies-add-favourite{
+display: flex;
+justify-content: flex-end;
+}
+.pr-add-favourite__button{
+border-radius: 3px;
+border: 1px solid white;
+background-color:rgb(97, 219, 97);
+color: rgb(117, 107, 107);
+ 
+}
+.pr-add-favourite__button:hover{
+    outline: none;
+}
+.pr-currencies-datepicker-wraper{    
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -32,9 +32,7 @@ class App extends Component {
           <Switch>
             <Route exact={true} path='/Favourite' component={Favourite} />
             <Route exact={true} path='/About' component={About} />
-            <div className="pr-currency-panel-wrap">
-              <CurrencyPanel />
-            </div>
+            <Route component={CurrencyPanel}/>
           </Switch>
 
           <Switch>

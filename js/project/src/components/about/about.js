@@ -5,10 +5,10 @@ export class About extends Component {
     render() {
         return (
             <div className="pr-about" >
-                This site was designed and developed by: Putsick Vadim
-                 GitHub URL: http://
-                 GitHub pages: http://
-                 Design: file.pdf
+               <div className="pr-text">This site was designed and developed by: Putsick Vadim</div>
+               <div className="pr-text">GitHub URL: http://</div>
+               <div className="pr-text">GitHub pages: http://</div>
+               <div className="pr-text">Design: file.pdf</div>
             </div>
         );
 

@@ -6,7 +6,7 @@ const initialState = {
     filteredItems: []
 };
 // Selected Currency Reducer
-export function currecyListReducer(state = initialState, action) {
+export function selectedCurrencyReducer(state = initialState, action) {
     switch (action.type) {
         case GET_CURRENCY_LIST_FULFILLED:
             return {

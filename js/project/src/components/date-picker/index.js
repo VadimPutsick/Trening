@@ -1,4 +1,4 @@
 export {
-    Calculator
+    DatePicker
 }
-from './calculator';
+from './date-picker';
