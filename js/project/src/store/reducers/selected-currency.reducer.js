@@ -1,11 +1,9 @@
 import { SELECTED_CURRENCY } from './../actions';
 // import { initialState } from './currecy-list.reducer';
-let defaultValue = JSON.parse( localStorage.getItem('defaultCurrency'))||{nameShort:'error',rate:'',ID:''};
+let defaultValue = JSON.parse(localStorage.getItem('defaultCurrency')) || { nameShort: 'error', rate: '', ID: '' };
 const initialState = {
     state: 'INITIAL',
-    nameShort: defaultValue.nameShort,
-    rate: defaultValue.rate,
-    ID: defaultValue.ID
+    currency: defaultValue
 };
 // Selected Currency Reducer
 export function selectedCurrencyReducer(state = initialState, action) {
@@ -14,9 +12,7 @@ export function selectedCurrencyReducer(state = initialState, action) {
             return {
                 ...state,
                 state: 'Currency selected',
-                nameShort: action.payload.nameShort,
-                rate: action.payload.rate,
-                ID: action.payload.ID
+                currency: action.payload
             };
         default:
             return state;

@@ -6,17 +6,12 @@ import { connect } from 'react-redux';
 import { addCurrencyToFavourite } from './../../store/actions';
 class Currencies extends Component {
     render() {
-        const selectedCurrency = {
-            nameShort: this.props.nameShort,
-            rate: this.props.rate,
-            ID: this.props.ID
-        };
         return (
             <div className="pr-currencies" >
                 <div>
                     <div className="pr-currencies-add-favourite">
                         <button className="pr-add-favourite__button"
-                            onClick={()=>this.props.addCurrency(selectedCurrency)}
+                            onClick={()=>this.props.addCurrency(this.props.selectedCurrency)}
                         >
                             To Favourite
                             </button>
@@ -35,10 +30,8 @@ class Currencies extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    const nameShort = state.selectedCurrency.nameShort;
-    const rate = state.selectedCurrency.rate;
-    const ID = state.selectedCurrency.ID;
-    return { nameShort, rate, ID };
+    const selectedCurrency = state.selectedCurrency.currency;
+    return { selectedCurrency };
 };
 
 const mapDispatchToProps = (dispatch) => ({

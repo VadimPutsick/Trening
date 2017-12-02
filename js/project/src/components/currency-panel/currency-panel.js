@@ -47,7 +47,7 @@ class CurrencyPanel extends Component {
                                         nameShort={item.nameShort}
                                         rate={String(item.rate).slice(0, 4)}
                                         currencyChange={item.currencyChange}
-                                        ID={item.ID}
+                                        currency={item}
 
                                     />
                                 );

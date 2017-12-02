@@ -18,6 +18,10 @@ export {
 }
     from './currencies';
 export {
-    Favourite
+    FavouriteCurrencies
 }
-    from './favourite';
+    from './favourite-currencies';
+export {
+    CurrencyCounter
+}
+    from './currency-counter';

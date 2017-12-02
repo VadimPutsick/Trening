@@ -6,6 +6,8 @@ export class CurrencyEntity {
         this.scale = entity.Cur_Scale || '';
         this.name = entity.Cur_Name || '';
         this.ID = entity.Cur_ID || '';
+        this.dateStart = entity.Cur_DateStart || '';
+        this.dateEnd = entity.Cur_DateEnd || '';
     }
 
     toEntity() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './app.css';
-import { CurrencyPanel, Calculator, Currencies, Favourite, About } from './components';
+import { CurrencyPanel, Calculator, Currencies, FavouriteCurrencies, About,CurrencyCounter } from './components';
 import {
   HashRouter as Router,
   Switch,
@@ -27,10 +27,11 @@ class App extends Component {
               <NavLink to='/About' ><div className="pr-menu__item" >About</div></NavLink>
               <hr />
               <NavLink to={'/Favourite'} ><div className="pr-menu__item" >Favourite</div></NavLink>
+              <CurrencyCounter/>
             </div>
           </div>
           <Switch>
-            <Route exact={true} path='/Favourite' component={Favourite} />
+            <Route exact={true} path='/Favourite' component={FavouriteCurrencies} />
             <Route exact={true} path='/About' component={About} />
             <Route component={CurrencyPanel}/>
           </Switch>
