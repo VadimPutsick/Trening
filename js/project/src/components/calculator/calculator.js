@@ -1,170 +1,123 @@
-import './Calculator.css';
+import './calculator.css';
 import React, { Component } from 'react';
 
-import data from '../../data/currency.json';
-export class Calculator extends Component {
-    render() {
-        const Calculator =
-            <div className="pr-Calculator-form-wrapper">
-                <CalculatorForm />
-            </div>
-        ;
-        const defaulth =
-            <div className="pr-Calculator__default">
-                Calculator
-            </div>
-        ;
-        return (
-            <div className="pr-Calculator" >
-                {Calculator}
-            </div>
-        );
+import { connect } from 'react-redux';
+import { selectedCurrency } from './../../store/actions';
 
-    }
-}
-class CalculatorForm extends Component {
-    constructor(props) {
-        super(props);
-        this.source;
-        this.destination;
 
-    }
-    validateFormItems(item, value, error) {
-        let erTrue = `{ "${error}": true }`;
-        erTrue = JSON.parse(erTrue);
-        let erFalse = `{ "${error}": false }`;
-        erFalse = JSON.parse(erFalse);
-
-        if (isNaN(+item[value].value)) {
-            item.setState(
-                erTrue
-            );
-            return false;
-        } else {
-            item.setState(
-                erFalse
-            );
-            return true;
-
-        }
-
-    }
-    Convert() {
-        let cur = this.source.currencyValue.value;
-        let curRate = this.source.currencyRate.value;
-        let newCurRate = this.destination.currencyRate.value;
-
-        this.destination.currencyValue.value = cur * curRate / newCurRate;
-    }
-    getCourseVal() {
-        let sourceInputValidate = this.validateFormItems(this.source, 'currencyValue', 'inputError');
-        let sourceSelctValidate = this.validateFormItems(this.source, 'currencyRate', 'selectError');
-
-        if (sourceSelctValidate && sourceInputValidate) {
-            if (this.validateFormItems(this.destination, 'currencyRate', 'selectError')) {
-this.Convert();
-}
-            return true;
-        } else {
-return false;
-}
-
-    }
-    currencyConvert() {
-        let DestinationSelctValidate = this.validateFormItems(this.destination, 'currencyRate', 'selectError');
-        if (this.getCourseVal() && DestinationSelctValidate) {
-this.Convert();
-}
-    }
-
-    render() {
-        return (
-            <div className="pr-Calculator-form">
-                <div className="pr-form__title">
-                    Currency Calculator
-                </div>
-                <CalculatorFormItem
-                    label="Source"
-                    input="Text input"
-                    ref={(component) => {
- this.source = component;
-}}
-                    getCourseVal={this.getCourseVal.bind(this)}
-                />
-                <CalculatorFormItem
-                    label="Destination"
-                    input="Text"
-                    ref={(component) => {
- this.destination = component;
-}}
-                    getCourseVal={this.currencyConvert.bind(this)}
-                    readonly
-                />
-            </div>
-        );
-    }
-}
-class CalculatorFormItem extends Component {
+class Calculator extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            convertedCurrency: '',
             inputError: false,
             selectError: false
         };
-        this.dataCourse = data;
-        this.currencyValue;
-        this.currencyRate;
-
+        this.destCurrency;
+        this.calculate = this.calculate.bind(this);
+        this.validateInput = this.validateInput.bind(this);
+        this.validateSelect = this.validateSelect.bind(this);
     }
-
-    // }
-
+    validateInput(value) {
+        if (isNaN(value)) {
+            this.setState(
+                { inputError: true }
+            );
+            return false;
+        } else {
+            this.setState(
+                { inputError: false }
+            );
+            return true;
+        }
+    }
+    validateSelect(value) {
+        if (this.props.nameRate[value]) {
+            this.setState(
+                { selectError: false }
+            );
+            return true;
+        } else {
+            this.setState(
+                { selectError: true }
+            );
+            return false;
+        }
+    }
+    calculate(value) {
+        if (this.validateInput(value) && this.validateSelect(this.destCurrency)) {
+            let currValue = value;
+            let currRate = this.props.selectedCurrencyRate;
+            let newCurrRate = this.props.nameRate[this.destCurrency];
+            let newcurrValue = currValue * currRate / newCurrRate;
+            this.setState(
+                { convertedCurrency: newcurrValue }
+            );
+        }
+    }
     render() {
         return (
-            <div className="pr-form-item">
-                <div className="pr-form__label">
-                    {this.props.label}
-                </div>
-                <div className="pr-form__input-wrapper">
-                    <input
-                        className="pr-form__input"
-                        readOnly={this.props.readonly}
-                        ref={(input) => {
- this.currencyValue = input;
-}}
-                        placeholder={this.props.input}
-                    />
-                    <div className="pr-form__error">
-                        {this.state.inputError ? 'Please input number!' : ''}
-                    </div>
-
-                </div>
-                <div className="pr-form__select-wrapper">
-                    <select
-                        ref={(select) => {
- this.currencyRate = select;
-}}
-                        onChange={() => this.props.getCourseVal()}
-                        className="pr-form__select"
-                    >
-                        <option>USD1</option>
-                        {
-                            this.dataCourse
-                                .map(
-                                (item, index) => {
-                                    return (
-                                        <option value={item['Cur_OfficialRate']} key={index}>{item['Cur_Abbreviation']}</option>
-                                    );
-                                })
+            <div className="pr-calculator-form">
+                <div className="pr-form-item">
+                    <div className="pr-form__label" onClick={
+                        () => {
+                            console.log("dest = " + this.destCurrency);
                         }
-
-                    </select>
-                    <div className="pr-form__error">
-                        {this.state.selectError ? 'You peak USD1 in source field' : ''}
+                    }>
+                        Value
+                    </div>
+                    <div className="pr-form__input-wrapper">
+                        <input className="pr-form__input" onChange={(event) => this.calculate(event.target.value)} />
+                        <div className="pr-error">
+                            {this.state.inputError ? 'Please, input number' : ''}
+                        </div>
+                    </div>
+                    <div className="pr-form__select-wrapper">
+                        {this.props.selectedCurrencyNameShort}
                     </div>
                 </div>
-            </div>
+                <div className="pr-form-item">
+                    <div className="pr-form__label">
+                        Destination
+                    </div>
+                    <div className="pr-form__input-wrapper">
+                        <input className="pr-form__input pr-form__input_readonly" value={this.state.convertedCurrency} readOnly />
+                    </div>
+                    <div className="pr-form__select-wrapper">
+                        <input className="pr-form__select" list="character"
+                            onChange={(event) => this.destCurrency = event.target.value} />
+                        <datalist id="character">
+                            {
+                                this.props.currencyList.map(
+                                    (item, index) => {
+                                        return (
+                                            <option key={index} >{item.nameShort}</option>
+                                        );
+                                    })
+                            }
+                        </datalist>
+                        <div className="pr-error">
+                            {this.state.selectError ? `Could not find ${String(this.destCurrency).toUpperCase()}` : ''}
+                        </div>
+                    </div>
+                </div>
 
+            </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    const selectedCurrencyNameShort = state.selectedCurrency.nameShort;
+    const selectedCurrencyRate = state.selectedCurrency.rate;
+    const currencyList = state.currecyList.items;
+    const nameRate = state.currecyList.nameRate;
+    return { selectedCurrencyNameShort, selectedCurrencyRate, currencyList, nameRate };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    selectedCurrency: (todo) => dispatch(selectedCurrency(todo))
+});
+let output = connect(mapStateToProps, mapDispatchToProps)(Calculator);
+export { output as Calculator };
+

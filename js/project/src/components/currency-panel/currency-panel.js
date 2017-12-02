@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
 import './currency-panel.css';
-// import data from '../../data/currency.json';
+import React, { Component } from 'react';
+
 import { EntityService } from '../../service';
 import { Currency } from '../currency';
 
 import { connect } from 'react-redux';
-import { getCurrencyList,currencyListFiltered } from './../../store/actions';
+import { getCurrencyList, currencyListFiltered, selectedCurrency } from './../../store/actions';
 class CurrencyPanel extends Component {
     constructor(props) {
         super(props);
-      this.currencyFiltere = '';
+        this.currencyFiltere = '';
     }
     componentWillMount() {
         let ent = new EntityService();
         this.props.getCurrency(ent.getCurrencyList());
     }
-
     render() {
         return (
             <div className="pr-search-course">
@@ -24,14 +23,17 @@ class CurrencyPanel extends Component {
                         className="pr-search-item pr-search-item_input"
                         type="text"
                         placeholder="Search input"
-                        onChange = {(event)=>{
+                        onChange={(event) => {
                             this.props.currencyFiltere(event.target.value);
                         }}
                     />
                     <button className="pr-search-item pr-search-item_button"
-                    onClick={
-                        ()=>{console.log(this.props)}
-                    }
+                        onClick={
+                            () => {
+                                console.log(this.props);
+                                console.log(this.props.currencyList[0]);
+                            }
+                        }
                     >Search</button>
                 </div>
                 <div className="pr-scroll">
@@ -42,14 +44,18 @@ class CurrencyPanel extends Component {
                                     <Currency
                                         key={index}
                                         value={item}
-                                        abbreviation={item.nameShort}
+                                        nameShort={item.nameShort}
                                         rate={String(item.rate).slice(0, 4)}
                                         currencyChange={item.currencyChange}
+                                        ID={item.ID}
+
                                     />
                                 );
                             })
                     }
-                   {this.props.error}
+                    <div className="pr-error">
+                    {this.props.error}
+                    </div>
                 </div>
             </div>
         );
@@ -58,7 +64,7 @@ class CurrencyPanel extends Component {
 const mapStateToProps = (state) => {
     const currencyList = state.currecyList.filteredItems;
     const error = state.currecyList.error;
-    return { currencyList,error };
+    return { currencyList, error };
 };
 
 const mapDispatchToProps = (dispatch) => ({

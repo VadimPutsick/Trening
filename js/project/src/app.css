@@ -38,7 +38,9 @@ body {
     color: white;
 }
 
-
+.pr-error{
+    color:red;
+}
 
 .pr-content {
     /* padding-left: 10%;

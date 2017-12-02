@@ -1,20 +1,6 @@
-.pr-converter__default {
-    margin: 350px 0 0 30px;
-    padding: 20px 8px;
-    border-radius: 20px 0 0 20px;
-    background-color: rgb(204, 204, 204);
-    color: black;
-}
-
-.pr-converter-form-wrapper {
-    background-color: rgb(204, 204, 204);
-    height: 100vh;
-}
-
-.pr-converter-form {
-    padding: 5px;
-    color: rgb(92, 87, 87);
-}
+.pr-calculator-form {
+    padding: 30px 0 0 100px;
+   }
 
 .pr-form__title {
     border-bottom: 1px solid black;
@@ -33,20 +19,29 @@
 
 .pr-form__input-wrapper {
     padding-right: 5px;
+    height:40px;
     display: flex;
     flex-direction: column;
 }
 
 .pr-form__input {
     padding: 0 5px 0 20px;
+    width: 150px;    
     border-radius: 3px;
+    border-color: rgb(92, 87, 87);
 }
-
+.pr-form__input:focus {
+    outline: none;   
+}
+.pr-form__input_readonly{
+    background-color: rgba(92, 87, 87, 0.233);
+}
 .pr-form__select {
     padding-right: 10px;
-    border-color: rgb(92, 87, 87);
-    background-color: inherit;
-    color: rgb(92, 87, 87);
+    width:70px;
+    border: 1px solid rgb(92, 87, 87);
+    background-color: inherit;   
+    color:white;
 }
 
 .pr-form__select:focus {

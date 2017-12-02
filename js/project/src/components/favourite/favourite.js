@@ -1,7 +1,7 @@
 import './favourite.css';
 import React, { Component } from 'react';
 import { CurrencyChart } from './../currency-chart';
-import data from '../../data/currency.json';
+
 export class Favourite extends Component {
     render() {
 

@@ -1,4 +1,4 @@
-import { GET_CURRENCY_LIST,CURRENCY_LIST_FILTERED } from './currencyList.types';
+import { GET_CURRENCY_LIST,CURRENCY_LIST_FILTERED } from './action.types';
 
 export function getCurrencyList(payload) {
     return {

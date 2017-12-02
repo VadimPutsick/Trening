@@ -34,7 +34,6 @@ class App extends Component {
             <Route exact={true} path='/About' component={About} />
             <Route component={CurrencyPanel}/>
           </Switch>
-
           <Switch>
             <Route exact={true} path='/' component={Currencies} />
             <Route exact={true} path='/Calculator' component={Calculator} />

@@ -25,6 +25,7 @@ export class EntityService {
                             currencyChange: (
                                 new CurrencyEntity(todayCurrency.data[index]).rate - new CurrencyEntity(yearstedayCurrency.data[index]).rate
                             ).toFixed(numberFixe)
+
                         }
 
                     );
