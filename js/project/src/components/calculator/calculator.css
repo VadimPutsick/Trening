@@ -33,8 +33,9 @@
 .pr-form__input:focus {
     outline: none;   
 }
-.pr-form__input_readonly{
+.pr-form__input_readonly{    
     background-color: rgba(92, 87, 87, 0.233);
+    color: white;
 }
 .pr-form__select {
     padding-right: 10px;

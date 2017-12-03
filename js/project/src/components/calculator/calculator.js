@@ -51,7 +51,7 @@ class Calculator extends Component {
             let newCurrRate = this.props.nameRate[this.destCurrency];
             let newcurrValue = currValue * currRate / newCurrRate;
             this.setState(
-                { convertedCurrency: newcurrValue }
+                { convertedCurrency: newcurrValue.toFixed(4)}
             );
         }
     }
@@ -81,7 +81,8 @@ class Calculator extends Component {
                         Destination
                     </div>
                     <div className="pr-form__input-wrapper">
-                        <input className="pr-form__input pr-form__input_readonly" value={this.state.convertedCurrency} readOnly />
+                        <input className="pr-form__input pr-form__input_readonly"
+                            value={this.state.convertedCurrency} readOnly />
                     </div>
                     <div className="pr-form__select-wrapper">
                         <input className="pr-form__select" list="character"
@@ -108,8 +109,8 @@ class Calculator extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const selectedCurrencyNameShort = state.selectedCurrency.nameShort;
-    const selectedCurrencyRate = state.selectedCurrency.rate;
+    const selectedCurrencyNameShort = state.selectedCurrency.currency.nameShort;
+    const selectedCurrencyRate = state.selectedCurrency.currency.rate;
     const currencyList = state.currecyList.items;
     const nameRate = state.currecyList.nameRate;
     return { selectedCurrencyNameShort, selectedCurrencyRate, currencyList, nameRate };
