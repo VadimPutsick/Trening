@@ -25,14 +25,7 @@ class CurrencyPanel extends Component {
                             this.props.currencyFiltere(event.target.value);
                         }}
                     />
-                    <button className="pr-search-item pr-search-item_button"
-                        onClick={
-                            () => {
-                                console.log(this.props);
-                                console.log(this.props.currencyList[0]);
-                            }
-                        }
-                    >Search</button>
+                    <button className="pr-search-item pr-search-item_button">Search</button>
                 </div>
                 <div className="pr-scroll">
                     {

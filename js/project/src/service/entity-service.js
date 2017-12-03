@@ -1,7 +1,7 @@
-import { CurrencyEntity,DateEntity } from './entity';
+import { CurrencyEntity,DateEntity,DateParce } from './entity';
 import axios from 'axios';
 const TodayCourse = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
-let yesterday = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() - 1}`;
+let yesterday = new DateParce().toStringMonthDay(0,-1);
 const YesterdayCourse = `http://www.nbrb.by/API/ExRates/Rates?onDate=${yesterday}&Periodicity=0`;
 const CurrencyDescription = `http://www.nbrb.by/API/ExRates/Currencies`;
 

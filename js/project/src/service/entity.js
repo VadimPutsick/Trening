@@ -29,3 +29,19 @@ export class DateEntity {
     }
 
 }
+export class DateParce{
+    constructor() {
+        this.Day = new Date().getDate();
+        this.Month = new Date().getMonth();
+        this.Year = new Date().getFullYear();
+    }
+    toStringMonthDay(month,day){
+       let newMonth = this.Month+month;
+       let newDay = this.Day+day;
+       if(newMonth<9) {newMonth = '0'+Math.abs(newMonth)}
+       if(newDay<9) {newDay = '0'+Math.abs(newDay)}
+        return `${this.Year}-${newMonth}-${newDay}`;
+
+    }
+
+}

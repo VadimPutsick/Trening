@@ -1,12 +1,12 @@
 import { SELECTED_CURRENCY, SELECTED_CURRENCY_DATE } from './../actions';
 import { defaultSelectedCurrency } from './../../localStorage';
-import { fromCurrencyDate, endCurrencyDate } from './../../components/date-picker';
-
+import { DateParce } from './../../service/entity';
+// new DateParce().toStringMonthDay(false,-1)
 const initialState = {
     state: 'INITIAL',
     currency: defaultSelectedCurrency.value || { nameShort: 'please select the currency', rate: '', ID: '' },
-    fromCurrencyDate: '2017-11-3',
-    endCurrencyDate: '2017-12-3'
+    fromCurrencyDate: new DateParce().toStringMonthDay(-1,0),
+    endCurrencyDate:  new DateParce().toStringMonthDay(0,0)
 };
 // Selected Currency Reducer
 export function selectedCurrencyReducer(state = initialState, action) {

@@ -26,7 +26,7 @@ export class CurrencyChart extends Component {
                 datasets: [{
                     label: '# Currencies',
                     data: dateList.map((item) => item.rate),
-                    backgroundColor: 'rgba(25, 159, 64, 0.2)',
+                    backgroundColor: 'rgba(146, 23, 146, 0.3)',
                     borderWidth: 1
                 }]
             },

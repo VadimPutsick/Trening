@@ -4,8 +4,9 @@ import { CurrencyChart } from './../currency-chart';
 import { Convertor } from './../converter';
 import { connect } from 'react-redux';
 import { selectedCurrency } from './../../store/actions';
-
-
+import { DateParce } from './../../service/entity';
+// import { DateParce } from './../../service/entity';
+// fromCurrencyDate: new DateParce().toStringMonthDay(-1,0),
  class Calculator extends Component {
     constructor(props) {
         super(props);
@@ -63,8 +64,8 @@ import { selectedCurrency } from './../../store/actions';
                 <div className="pr-chart">
                     <CurrencyChart
                         currencyID={this.props.currencyID}
-                        fromCurrencyDate='2017-11-3'
-                        endCurrencyDate='2017-12-3'
+                        fromCurrencyDate={new DateParce().toStringMonthDay(-1,0)}
+                        endCurrencyDate={new DateParce().toStringMonthDay(0,0)}
                     />
                 </div>
             </div>
@@ -73,7 +74,6 @@ import { selectedCurrency } from './../../store/actions';
 }
 
 const mapStateToProps = (state) => {
-   
     const currencyID = state.selectedCurrency.currency.ID;
     return { currencyID };
 };
