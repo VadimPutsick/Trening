@@ -1,18 +1,32 @@
- import './currency-chart.css';
+import './currency-chart.css';
 import React, { Component } from 'react';
 import { Chart } from 'chart.js';
-
+import { EntityService } from '../../service';
+import { connect } from 'react-redux';
+// {date: "2017-11-08T00:00:00", rate: 1.5191}
 export class CurrencyChart extends Component {
-    renderChart(){
-        var ctx = document.getElementById("myChart");
+    constructor(props) {
+        super(props);
+        this.chart;
+    }
+    renderChart(dateList,canvas) {
+        // var ctx = document.getElementById("myChart");
+        let ctx = canvas.getContext('2d');
+        let rates = dateList.map((item) => item.rate).sort();
+        let dates = dateList.map((item) => item.date);
+        let ratemin = +rates[0];
+        let ratemax = +rates[rates.length - 1];
+        let raterange = ratemax - ratemin;
+        let borderVal = 3 / 10;
+        ratemin = ratemin - raterange * borderVal;
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: dates,
                 datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor:'rgba(25, 159, 64, 0.2)',
+                    label: '# Currencies',
+                    data: dateList.map((item) => item.rate),
+                    backgroundColor: 'rgba(25, 159, 64, 0.2)',
                     borderWidth: 1
                 }]
             },
@@ -21,20 +35,34 @@ export class CurrencyChart extends Component {
                     yAxes: [{
                         stacked: true,
                         ticks: {
-                            beginAtZero:true
+                            min: ratemin - raterange * borderVal,
+                            max: ratemax + raterange * borderVal
                         }
                     }]
                 }
             }
         });
     }
-    componentDidMount(){
-        this.renderChart();
+    draw(id, fromCurrencyDate, endCurrencyDate) {
+        let ent = new EntityService();
+        ent.getDateList(id, fromCurrencyDate, endCurrencyDate).then(
+            (dateList) => {
+                console.log(dateList);
+                this.renderChart(dateList,this.canvas);
+            })
+            .catch((error) => {
+                return error;
+            });
     }
     render() {
         return (
             <div className="pr-chart" >
-                 <canvas id="myChart"></canvas>
+                {this.draw(this.props.currencyID, this.props.fromCurrencyDate, this.props.endCurrencyDate)}
+                <canvas width="1" height="1"
+                    ref={(canvas) => {
+                        this.canvas = canvas;
+                    }}>
+                </canvas>
             </div>
         );
 

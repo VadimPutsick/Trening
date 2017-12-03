@@ -11,4 +11,5 @@ class CurrenncylocalStorage {
 }
 export let currenciesFavouriteStorage = new CurrenncylocalStorage('currenciesFavourite');
 export let currenciesCounter = new CurrenncylocalStorage('currenciesCounter');
+export let defaultSelectedCurrency = new CurrenncylocalStorage('defaultSelectedCurrency');
 

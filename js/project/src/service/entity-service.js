@@ -1,12 +1,24 @@
-import { CurrencyEntity } from './entity';
+import { CurrencyEntity,DateEntity } from './entity';
 import axios from 'axios';
 const TodayCourse = 'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0';
-// http://www.nbrb.by/API/ExRates/Currencies/191
 let yesterday = `${new Date().getFullYear()}-${new Date().getMonth()}-${new Date().getDate() - 1}`;
 const YesterdayCourse = `http://www.nbrb.by/API/ExRates/Rates?onDate=${yesterday}&Periodicity=0`;
 const CurrencyDescription = `http://www.nbrb.by/API/ExRates/Currencies`;
-export class EntityService {
 
+export class EntityService {
+    getDateList(currencyId, fromCurrencyDate, endCurrencyDate) {
+        let dinamicQuery ='http://www.nbrb.by/API/ExRates/Rates/Dynamics/';
+        let curenciesDate = `${dinamicQuery}${currencyId}?startDate=${fromCurrencyDate}&endDate=${endCurrencyDate}`;
+        return axios.get(curenciesDate)
+            .then(
+            (results) => {
+                let dateList = [];
+                results.data.forEach(element => {
+                    dateList.push(new DateEntity(element));
+                });
+                return dateList;
+            });
+    }
     getCurrencyList() {
         return Promise.all([
             axios.get(TodayCourse),

@@ -20,9 +20,12 @@ export class CurrencyEntity {
             Cur_ID:  this.ID
         };
     }
-
-    fromEntity(entity) {
-        return new CurrencyEntity(entity);
-    }
 }
 
+export class DateEntity {
+    constructor(entity) {
+        this.date = entity.Date || '';
+        this.rate = entity.Cur_OfficialRate || '';
+    }
+
+}

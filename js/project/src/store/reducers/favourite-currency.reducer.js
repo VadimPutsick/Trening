@@ -31,6 +31,7 @@ export function favouriteCurrenciesReducer(state = initialState, action) {
             newProperty[action.payload].notification = true;
             return changeAndAddTolocalStorage();
         case DELETE_CURRENCY_IN_FAVOURITE:
+            newProperty[action.payload].notification ? counter : counter--;
             delete newProperty[action.payload];
             return changeAndAddTolocalStorage();
         default:

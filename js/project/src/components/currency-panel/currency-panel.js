@@ -1,9 +1,7 @@
 import './currency-panel.css';
 import React, { Component } from 'react';
-
 import { EntityService } from '../../service';
 import { Currency } from '../currency';
-
 import { connect } from 'react-redux';
 import { getCurrencyList, currencyListFiltered, selectedCurrency } from './../../store/actions';
 class CurrencyPanel extends Component {

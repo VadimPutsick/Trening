@@ -1,4 +1,4 @@
-import { SELECTED_CURRENCY } from './action.types';
+import { SELECTED_CURRENCY,SELECTED_CURRENCY_DATE } from './action.types';
 
 export function selectedCurrency(payload) {
     return {
@@ -6,4 +6,12 @@ export function selectedCurrency(payload) {
         payload
     };
 }
+export function selectedCurrencyDate(payload,datetype) {
+    return {
+        type: SELECTED_CURRENCY_DATE,
+        payload,
+        datetype
+    };
+}
+
 

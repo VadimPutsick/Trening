@@ -1,11 +1,12 @@
 import './calculator.css';
 import React, { Component } from 'react';
-
+import { CurrencyChart } from './../currency-chart';
+import { Convertor } from './../converter';
 import { connect } from 'react-redux';
 import { selectedCurrency } from './../../store/actions';
 
 
-class Calculator extends Component {
+ class Calculator extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,74 +52,32 @@ class Calculator extends Component {
             let newCurrRate = this.props.nameRate[this.destCurrency];
             let newcurrValue = currValue * currRate / newCurrRate;
             this.setState(
-                { convertedCurrency: newcurrValue.toFixed(4)}
+                { convertedCurrency: newcurrValue.toFixed(4) }
             );
         }
     }
     render() {
         return (
-            <div className="pr-calculator-form">
-                <div className="pr-form-item">
-                    <div className="pr-form__label" onClick={
-                        () => {
-                            console.log("dest = " + this.destCurrency);
-                        }
-                    }>
-                        Value
-                    </div>
-                    <div className="pr-form__input-wrapper">
-                        <input className="pr-form__input" onChange={(event) => this.calculate(event.target.value)} />
-                        <div className="pr-error">
-                            {this.state.inputError ? 'Please, input number' : ''}
-                        </div>
-                    </div>
-                    <div className="pr-form__select-wrapper">
-                        {this.props.selectedCurrencyNameShort}
-                    </div>
+            <div className="pr-calculator">
+              <Convertor/>
+                <div className="pr-chart">
+                    <CurrencyChart
+                        currencyID={this.props.currencyID}
+                        fromCurrencyDate='2017-11-3'
+                        endCurrencyDate='2017-12-3'
+                    />
                 </div>
-                <div className="pr-form-item">
-                    <div className="pr-form__label">
-                        Destination
-                    </div>
-                    <div className="pr-form__input-wrapper">
-                        <input className="pr-form__input pr-form__input_readonly"
-                            value={this.state.convertedCurrency} readOnly />
-                    </div>
-                    <div className="pr-form__select-wrapper">
-                        <input className="pr-form__select" list="character"
-                            onChange={(event) => this.destCurrency = event.target.value} />
-                        <datalist id="character">
-                            {
-                                this.props.currencyList.map(
-                                    (item, index) => {
-                                        return (
-                                            <option key={index} >{item.nameShort}</option>
-                                        );
-                                    })
-                            }
-                        </datalist>
-                        <div className="pr-error">
-                            {this.state.selectError ? `Could not find ${String(this.destCurrency).toUpperCase()}` : ''}
-                        </div>
-                    </div>
-                </div>
-
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    const selectedCurrencyNameShort = state.selectedCurrency.currency.nameShort;
-    const selectedCurrencyRate = state.selectedCurrency.currency.rate;
-    const currencyList = state.currecyList.items;
-    const nameRate = state.currecyList.nameRate;
-    return { selectedCurrencyNameShort, selectedCurrencyRate, currencyList, nameRate };
+   
+    const currencyID = state.selectedCurrency.currency.ID;
+    return { currencyID };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    selectedCurrency: (todo) => dispatch(selectedCurrency(todo))
-});
-let output = connect(mapStateToProps, mapDispatchToProps)(Calculator);
+let output = connect(mapStateToProps)(Calculator);
 export { output as Calculator };
 

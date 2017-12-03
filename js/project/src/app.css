@@ -42,22 +42,16 @@ body {
     color:red;
 }
 
-.pr-content {
-    /* padding-left: 10%;
-    display: flex;
-    flex-direction: column;    
-    width: 60%; */
-}
 
 .pr-menu-wrap {
     position: absolute;
     top: 0;
-    left: 50%;
-    /* padding-left: 150px;
-    width: 200px; */
+    left: 50%;   
 }
-
-
+.pr-chart {
+    height: 380px;
+    width: 450px;
+}
 /* menu style */ 
 
 .pr-menu {
@@ -69,4 +63,9 @@ body {
     padding: 0 10px 10px 10px;
     color: white;
     text-decoration-line: underline;
+}
+.pr-currencies-datepicker-wraper{    
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
