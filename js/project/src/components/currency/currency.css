@@ -34,4 +34,11 @@
 .pr-course__changes_red{
     background-color: rgba(226, 85, 85, 0.774);
 }
-
+.pr-course__icon{
+    height: 18px;
+    width: 18px;
+    padding: 2px 0;
+    background-color: rgb(209, 196, 196);   
+    text-align: center;    
+    color:black;
+}

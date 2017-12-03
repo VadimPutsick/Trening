@@ -1,42 +1,9 @@
 .pr-search-course{
-    width: 25%;
+    width: 27%;
 }
 /* course  style */
 
-.pr-course-item{
-    display: flex;
-    flex-direction: row; 
-   justify-content: space-between;
-   padding: 3px; 
-   color:blue;
-}
-.pr-course-item:hover{ 
-     color:white;  
-     background-color: #057cb7; 
-}
 
-.pr-course__abbreviation{
-    text-align: left;  
-    width:40px;
-}
-.pr-course__rate{
-    text-align: left;  
-}
-.pr-course__changes{
-    padding: 3px;
-    border: 1px solid white;
-    border-radius: 3px;
-    color:white;   
-}
-.pr-course__changes_green{
-    background-color: rgba(61, 226, 61, 0.719);
-}
-.pr-course__changes_red{
-    background-color: rgba(226, 85, 85, 0.774);
-}
-
-/* Search style */
-/* search-course  style */
 
 
 

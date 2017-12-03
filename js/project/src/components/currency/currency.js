@@ -2,6 +2,24 @@ import './currency.css';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectedCurrency } from './../../store/actions';
+const currencyIcon = {
+    AUD: '$',
+    UAH: '₴',
+    USD: '$',
+    EUR: '€',
+    PLN: 'zł',
+    IRR: '﷼',
+    JPY: '¥',
+    CAD: '$',
+    CNY: '¥',
+    KWD: 'ك',
+    NZD: '$',
+    RUB: '₽',
+    SGD:'$',
+    KZT:'₸',
+    TRY: '₺',
+    GBP:'£'
+};
 class Currency extends Component {
     constructor(props) {
         super(props);
@@ -13,6 +31,9 @@ class Currency extends Component {
                     this.props.dispatch(selectedCurrency(this.props.currency));
                 }
             }>
+                <div className="pr-course__icon">
+                    {currencyIcon[this.props.nameShort] ? currencyIcon[this.props.nameShort] : '$'}
+                </div>
                 <div className="pr-course__abbreviation">{this.props.nameShort}</div>
                 <div className="pr-course__rate">{this.props.rate}</div>
                 {
