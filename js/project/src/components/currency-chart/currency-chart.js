@@ -1,6 +1,6 @@
 import './currency-chart.css';
 import React, { Component } from 'react';
-import { Chart } from 'chart.js';
+import { Chart } from 'chart';
 import { EntityService } from '../../service';
 import { connect } from 'react-redux';
 // {date: "2017-11-08T00:00:00", rate: 1.5191}
