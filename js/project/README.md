@@ -1,5 +1,5 @@
 # Project
-
+To run project launch file this direction "/dist/index.html"
 ## Table of Contents
 * [View](#view-project)
 * [How run the project](#how-to-use)
