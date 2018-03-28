@@ -1,6 +1,7 @@
 
 import { GET_CURRENCY_LIST_FULFILLED, GET_CURRENCY_LIST_REJECTED, CURRENCY_LIST_FILTERED } from './../actions';
 
+
 export let initialState = {
     state: 'INITIAL',
     items: [],
@@ -18,6 +19,7 @@ export function currecyListReducer(state = initialState, action) {
                 }
 
             );
+           
             return {
                 ...state,
                 state: 'FULFILLED',

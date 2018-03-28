@@ -36,11 +36,12 @@ export class DateParce{
         this.Year = new Date().getFullYear();
     }
     toStringMonthDay(month,day){
-       let newMonth = this.Month+month;
-       let newDay = this.Day+day;
-       if(newMonth<9) {newMonth = '0'+Math.abs(newMonth)}
-       if(newDay<9) {newDay = '0'+Math.abs(newDay)}
-        return `${this.Year}-${newMonth}-${newDay}`;
+        let newDate = new Date(this.Year,this.Month+month,this.Day+day);
+       let newMonth = newDate.getMonth()+1;
+       let newDay = newDate.getDate();
+       if(newDate.getMonth()<10) {newMonth = '0'+newMonth;}
+       if(newDay<10) {newDay = '0'+newDay;}
+        return `${newDate.getFullYear()}-${newMonth}-${newDay}`;
 
     }
 

@@ -13,6 +13,7 @@ class Convertor extends Component {
             selectError: false
         };
         this.destCurrency;
+        this.sourceCurrency;
         this.calculate = this.calculate.bind(this);
         this.validateInput = this.validateInput.bind(this);
         this.validateSelect = this.validateSelect.bind(this);
@@ -43,12 +44,14 @@ class Convertor extends Component {
             return false;
         }
     }
-    calculate(value) {
-        if (this.validateInput(value) && this.validateSelect(this.destCurrency)) {
-            let currValue = value;
+    calculate() {
+        if (this.validateInput(this.sourceCurrency) && this.validateSelect(this.destCurrency)) {
+            let currValue = this.sourceCurrency;
             let currRate = this.props.selectedCurrencyRate;
             let newCurrRate = this.props.nameRate[this.destCurrency];
             let newcurrValue = currValue * currRate / newCurrRate;
+           
+          
             this.setState(
                 { convertedCurrency: newcurrValue.toFixed(4) }
             );
@@ -60,13 +63,17 @@ class Convertor extends Component {
                 <div className="pr-form-item">
                     <div className="pr-form__label" onClick={
                         () => {
-                            console.log("dest = " + this.destCurrency);
+                           /*  console.log("dest = " + this.destCurrency+" \n  selectedCurrencyNameShort "+this.props.selectedCurrencyNameShort
+                           +"\n this.props.selectedCurrencyRate "+ this.props.selectedCurrencyRate+ "\n  this.props.currencyList"
+                          + this.props.currencyList +"\n this.props.nameRate "+  this.props.nameRate +"\n"+
+                          + this.props.currencyID); */
+                          console.log(this.props.nameRate);
                         }
                     }>
                         Value
                     </div>
                     <div className="pr-form__input-wrapper">
-                        <input className="pr-form__input" onChange={(event) => this.calculate(event.target.value)} />
+                        <input className="pr-form__input" onChange={(event) =>{this.sourceCurrency = event.target.value;this.calculate(event.target.value);} } />
                         <div className="pr-error">
                             {this.state.inputError ? 'Please, input number' : ''}
                         </div>
@@ -85,7 +92,7 @@ class Convertor extends Component {
                     </div>
                     <div className="pr-form__select-wrapper">
                         <input className="pr-form__select" list="character"
-                            onChange={(event) => this.destCurrency = event.target.value} />
+                            onChange={(event) =>{this.destCurrency = event.target.value;this.calculate(event.target.value);}  } />
                         <datalist id="character">
                             {
                                 this.props.currencyList.map(

@@ -1,4 +1,4 @@
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var url = [
     'http://www.nbrb.by/API/ExRates/Currencies',
     'http://www.nbrb.by/API/ExRates/Rates?Periodicity=0',
@@ -15,7 +15,8 @@ function httpGet(url) {
             if (xhr.status != 200) {
                 console.log(xhr.status + ': ' + xhr.statusText); // пример вывода: 404: Not Found
             }
-            else {            
+            else {
+                document.writeLn            
              console.log( url[0] + '\n' + xhr.responseText.slice(0, 100) + '\n'); // responseText -- текст ответа.
                    url.shift();
                  if (url.length > 1)
