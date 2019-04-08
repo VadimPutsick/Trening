@@ -1,25 +1,25 @@
 {
-  "name": "Project",
+  "name": "Project ",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js"
+    "start": "npx webpack-dev-server --open --config webpack.dev.js",
+    "prod": "npx webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
+    "chart.js": "^2.8.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.2.2",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "redux-promise-middleware": "^5.0.0",
-    "chart.js": "^0.1.2"
+    "redux-promise-middleware": "^5.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -40,6 +40,7 @@
     "uglify-js-brunch": "^2.10.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
+    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1"
   }
